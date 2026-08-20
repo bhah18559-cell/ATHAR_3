@@ -1,0 +1,364 @@
+??/* ============================================================
+   متجر أثر — طبقة تأثيرات Magic UI (محولة لـ CSS/JS خالص)
+   أورورا، شبكة خلفية، حدود متوهجة متحركة، شريط متحرك،
+   عدادات رقمية، إمالة ثلاثية الأبعاد، أزرار لامعة، نصوص متدرجة
+   ============================================================ */
+
+/* ---------- خلفية أورورا متحركة (Aurora) ---------- */
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.aurora span {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  animation: aurora-drift 16s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.aurora .blob-1 {
+  width: 520px;
+  height: 520px;
+  top: -140px;
+  right: -120px;
+  background: radial-gradient(circle at 30% 30%, rgba(200, 35, 64, 0.55), rgba(200, 35, 64, 0) 70%);
+}
+
+.aurora .blob-2 {
+  width: 460px;
+  height: 460px;
+  bottom: -160px;
+  left: -140px;
+  background: radial-gradient(circle at 70% 70%, rgba(43, 102, 194, 0.6), rgba(43, 102, 194, 0) 70%);
+  animation-delay: -6s;
+}
+
+.aurora .blob-3 {
+  width: 380px;
+  height: 380px;
+  top: 30%;
+  left: 30%;
+  background: radial-gradient(circle, rgba(217, 155, 38, 0.35), rgba(217, 155, 38, 0) 70%);
+  animation-delay: -11s;
+}
+
+@keyframes aurora-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-40px, 30px, 0) scale(1.12); }
+  100% { transform: translate3d(30px, -25px, 0) scale(0.96); }
+}
+
+/* ---------- شبكة خلفية ناعمة (Grid Pattern) ---------- */
+.hero.grid-bg::after,
+.page-hero.grid-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 65% at 50% 35%, black 30%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 65% at 50% 35%, black 30%, transparent 78%);
+  z-index: 1;
+}
+
+/* ---------- حدود متوهجة متحركة (Border Beam / Shine Border) ---------- */
+.shine-border {
+  position: relative;
+}
+
+.shine-border::before,
+.shine-border::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    from calc(var(--beam-start, 0deg) + var(--beam-angle, 0deg)),
+    transparent 0deg,
+    rgba(241, 183, 62, 0.9) 40deg,
+    rgba(226, 50, 80, 0.9) 120deg,
+    rgba(43, 102, 194, 0.9) 200deg,
+    transparent 320deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: beam-rotate 6s linear infinite;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.shine-border::after {
+  opacity: 1;
+  filter: blur(8px);
+}
+
+.shine-border.hover-beam::before {
+  opacity: 1;
+}
+
+@keyframes beam-rotate {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- شريط متحرك (Marquee) ---------- */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  user-select: none;
+  direction: ltr;
+  border-radius: var(--radius-md);
+}
+
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  animation: marquee-scroll var(--marquee-speed, 30s) linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 28px;
+  font-weight: 800;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* شريط ماركوي داكن (للخلفيات الفاخرة) */
+.marquee-hero {
+  background: rgba(255, 255, 255, 0.06);
+  border-block: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 16px 0;
+  color: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+.marquee-hero .marquee-item i {
+  font-style: normal;
+  color: var(--gold-400);
+}
+
+.marquee-hero .marquee-item .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red-500);
+  display: inline-block;
+  margin-inline: 6px;
+}
+
+/* شريط ماركوي فاتح (للقسم الأبيض) */
+.marquee-light {
+  background: var(--bg-main);
+  color: var(--ink-secondary);
+  padding: 18px 0;
+}
+
+.marquee-light .marquee-item i {
+  color: var(--gold-400);
+}
+
+/* ---------- نصوص متدرجة متحركة (Gradient Text) ---------- */
+.grad-text {
+  background: linear-gradient(120deg, var(--gold-400), var(--red-500), var(--blue-500), var(--gold-400));
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: grad-flow 8s ease-in-out infinite;
+}
+
+@keyframes grad-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* ---------- أزرار لامعة (Shimmer Button) ---------- */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 60%;
+  left: -80%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-25deg);
+  animation: shimmer-sweep 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer-sweep {
+  0%   { left: -80%; }
+  60%, 100% { left: 120%; }
+}
+
+/* ---------- إمالة ثلاثية الأبعاد (Tilt Card) ---------- */
+.tilt {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform var(--transition-slow);
+}
+
+.tilt .tilt-inner {
+  transform: translateZ(18px);
+}
+
+/* ---------- ظهور تدريجي مع ضبابية (Blur Fade) ---------- */
+.blur-fade {
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blur-fade.in-view {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* ---------- كنزة/مسار توهج بعد الماوس (Spotlight Card) ---------- */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 20%), rgba(241, 183, 62, 0.16), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* ---------- عدادات رقمية متحركة (Counter) ---------- */
+.stat b[data-count] {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- حبيبات/جزيئات (Particles) في الهيرو ---------- */
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particles i {
+  position: absolute;
+  bottom: -10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  animation: particle-rise linear infinite;
+  opacity: 0;
+}
+
+@keyframes particle-rise {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: 0.8; }
+  100% { transform: translateY(-110vh) translateX(var(--px, 20px)); opacity: 0; }
+}
+
+/* ---------- لمعان للصور على التمرير ---------- */
+.img-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.35) 50%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+.img-shine:hover::after {
+  transform: translateX(120%);
+}
+
+/* ---------- بطاقة زجاجية للهيرو ---------- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* ============ تفضيل تقليل الحركة ============ */
+@media (prefers-reduced-motion: reduce) {
+  .aurora span,
+  .shine-border::after,
+  .btn-shimmer::before,
+  .grad-text,
+  .marquee-track {
+    animation: none;
+  }
+  .hero.grid-bg::after,
+  .page-hero.grid-bg::after {
+    animation: none;
+  }
+  .blur-fade {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+  .shine-border::before,
+  .shine-border::after {
+    animation: none;
+    opacity: 1;
+    background: none;
+  }
+}

@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>بوكسات آثر — متجر آثر</title>
+  <meta name="description" content="بوكسات آثر — قائمة مستقلة من 20 بوكسًا مرقّمًا منفصلة عن أقسام المنتجات. منتج يسيب آثر كبير.">
+  <link rel="icon" type="image/png" href="1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260912">
+  <link rel="stylesheet" href="assets/css/magic.css?v=20260830">
+</head>
+<body>
+
+  <!-- ===== الهيدر وشريط التنقل ===== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="1.png" alt="لوجو آثر">
+        <span class="brand-text">
+          <strong>آثر</strong>
+          <small>منتج يسيب آثر كبير</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="القائمة الرئيسية">
+        <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+        <a href="products.html" data-i18n="nav.products">المنتجات</a>
+        <a href="about.html" data-i18n="nav.about">من نحن</a>
+        <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="cart-toggle" id="cart-toggle" aria-label="سلة التسويق" title="سلة التسويق">
+          🛒<span class="cart-count" id="cart-count">0</span>
+        </button>
+        <button class="lang-toggle" id="lang-toggle" aria-label="تغيير اللغة" title="English">EN</button>
+        <button class="theme-toggle" id="theme-toggle" aria-label="الوضع الليلي/النهاري" title="الوضع الليلي">
+          <span class="logo-dark">🌙</span><span class="logo-light">☀️</span>
+        </button>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="قائمة الموبايل">
+      <div class="toggle-row">
+        <button class="theme-toggle variant" id="theme-toggle-m" aria-label="الوضع الليلي/النهاري"><span id="mode-label-m">الوضع الليلي</span></button>
+        <button class="lang-toggle variant" id="lang-toggle-m" aria-label="تغيير اللغة">EN <span data-i18n="lang.toggle">English</span></button>
+      </div>
+      <a href="index.html"><span data-i18n="nav.home">الرئيسية</span> <span>←</span></a>
+      <a href="products.html"><span data-i18n="nav.products">المنتجات</span> <span>←</span></a>
+      <a href="about.html"><span data-i18n="nav.about">من نحن</span> <span>←</span></a>
+      <a href="contact.html"><span data-i18n="nav.contact">تواصل معنا</span> <span>←</span></a>
+    </nav>
+  </header>
+
+  <!-- ===== رأس الصفحة ===== -->
+  <section class="page-hero grid-bg">
+    <div class="aurora">
+      <span class="blob-1"></span>
+      <span class="blob-2"></span>
+      <span class="blob-3"></span>
+    </div>
+    <div class="particles" id="hero-particles"></div>
+    <div class="container">
+      <h1 data-i18n="offers.heroTitle">بوكسات آثر 🎁</h1>
+      <p data-i18n="offers.heroDesc">لأي استفسار بخصوص أي بوكس، يُرجى التقاط Screenshot للبوكس وإرساله عبر الواتساب، وسيتم الرد عليك في أقرب وقت.</p>
+    </div>
+  </section>
+
+  <!-- ===== شبكة عروض الـ999 جنية ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag" data-i18n="offers.tag">قائمة مستقلة</span>
+        <h2><span data-i18n="offers.title">بوكسات آثر</span></h2>
+        <p data-i18n="offers.sub">منتجات آثر.. منتج يسيب آثر كبير.</p>
+      </div>
+      <div class="products-grid" id="offers-root"></div>
+    </div>
+  </section>
+
+  <!-- ===== الفوتر ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="1.png" alt="لوجو آثر">
+          <h3 data-i18n="brand.name">آثر</h3>
+          <p class="slogan" data-i18n="brand.tag">منتج يسيب آثر كبير</p>
+          <p>نقدم منتجات فخمة تجمع بين الجودة للشكل المميز والسعر المناسب، لأن التفاصيل الصغيرة هي التي تصنع الفرق الكبير.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.links">روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+            <li><a href="products.html" data-i18n="nav.products">المنتجات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.cats">دليل آثر</h4>
+          <ul>
+            <li><a href="#" onclick="openPolicy(); return false;"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 12c1.65 0 3-1.35 3-3s-1.35-3-3-3-3 1.35-3 3 1.35 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-1.5c0-2.33-4.67-3.5-7-3.5zm8.53-3.47l1.47 1.47-1.47 1.47-1.06-1.06.47-.47-.47-.47 1.06-1.06zM20 2h-2c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h2V4h8v12h2c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg><span data-i18n="footer.policy">سياسة الاستبدال والاسترجاع</span></a></li>
+            <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">تواصل معنا</h4>
+          <div class="footer-social" id="footer-socials"></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.rights">جميع الحقوق محفوظة © 2026 <b>آثر</b> — منتج يسيب آثر كبير.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== سلة التسويق ===== -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="سلة التسويق">
+    <div class="cart-head">
+      <h3 data-i18n="cart.title">سلة التسويق 🛒</h3>
+      <button type="button" class="cart-close" id="cart-close" aria-label="إغلاق السلة">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty">
+      <span class="cart-empty-icon">🛒</span>
+      <p data-i18n="cart.empty">سلتك فارغة حالياً</p>
+    </div>
+    <div class="cart-foot">
+      <div class="cart-total-row">
+        <span data-i18n="cart.total">الإجمالي</span>
+        <b id="cart-total">0</b>
+      </div>
+      <button type="button" class="btn btn-clear" id="cart-clear" onclick="clearCart()" data-i18n="cart.clearAll">مسح الكل 🗑️</button>
+      <a class="btn btn-whatsapp btn-lg" id="cart-wa" target="_blank" rel="noopener" href="https://wa.me/201040922823">
+        <span data-i18n="cart.checkout">تأكيد الطلب عبر واتساب 💬</span>
+      </a>
+    </div>
+  </aside>
+
+  <a class="fab" target="_blank" rel="noopener" href="https://wa.me/201040922823" aria-label="تواصل عبر واتساب">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <div class="toast" id="toast"></div>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js?v=20260912"></script>
+</body>
+</html>
