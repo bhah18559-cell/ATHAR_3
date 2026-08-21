@@ -2988,7 +2988,7 @@ button {
   }
 
   .cart-head h3 {
-    font-size: 19px;
+    font-size: 23px;
   }
 
   .cart-items {
@@ -3007,11 +3007,11 @@ button {
   }
 
   .cart-item h5 {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .cart-item .ci-price {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .cart-item .ci-qty button {
@@ -3026,19 +3026,19 @@ button {
   }
 
   .cart-total-row span {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .cart-total-row b {
-    font-size: 21px;
+    font-size: 25px;
   }
 
   .btn-whatsapp {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .btn-clear {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 8px;
   }
 
