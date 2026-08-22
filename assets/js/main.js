@@ -1099,14 +1099,6 @@ function setupCart() {
   });
   if (close) close.addEventListener("click", closeCart);
   if (overlay) overlay.addEventListener("click", closeCart);
-  var clearBtn = document.getElementById("cart-clear");
-  if (clearBtn) {
-    clearBtn.addEventListener("pointerdown", function () { clearBtn.classList.add("pressed"); });
-    var releasePress = function () { clearBtn.classList.remove("pressed"); };
-    ["pointerup", "pointercancel", "pointerleave", "blur"].forEach(function (ev) {
-      clearBtn.addEventListener(ev, releasePress);
-    });
-  }
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeCart();
   });
