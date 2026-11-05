@@ -631,7 +631,7 @@ function setupContactForm() {
     var text =
       (I18N_CURRENT === "en" ? "Hello, I am " : "مرحبًا، أنا ") + name +
       "\n" + (I18N_CURRENT === "en" ? "Message: " : "الرسالة: ") + message;
-    window.open(waLink("201040922823", text), "_blank");
+    window.open(waLink("201508126005", text), "_blank");
   });
 }
 

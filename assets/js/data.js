@@ -16,7 +16,7 @@ const BRAND = {
 
 /* ====== روابط التواصل — عدّل الروابط من مكان واحد هنا ====== */
 const SOCIALS = {
-  whatsapp: "https://wa.me/201040922823",
+  whatsapp: "https://wa.me/201508126005",
   instagram: "https://www.instagram.com/athar_1_11/",
   tiktok: "https://www.tiktok.com/@athar_1_11",
   /* رابط صفحة فيسبوك الرسمي للتواصل مباشرة من خلاله */
